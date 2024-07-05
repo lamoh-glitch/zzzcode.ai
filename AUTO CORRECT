@@ -1,0 +1,23 @@
+# Sample dictionary for demonstration
+corrections = {
+    "speling": "spelling",
+    "grammer": "grammar",
+    "writting": "writing",
+    "exampel": "example"
+}
+
+def auto_correct(word):
+    return corrections.get(word, word)
+
+def process_text(input_text):
+    words = input_text.split()
+    corrected_words = [auto_correct(word) for word in words]
+    return ' '.join(corrected_words)
+
+def main():
+    input_text = input("Enter text: ")
+    corrected_text = process_text(input_text)
+    print("Corrected text:", corrected_text)
+
+if __name__ == "__main__":
+    main()
